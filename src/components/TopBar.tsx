@@ -2,8 +2,8 @@ import React from 'react';
 import { Sparkles, Scale, RefreshCw } from 'lucide-react';
 
 interface TopBarProps {
-  activeView: 'bubbles' | 'rankings' | 'lineage';
-  setActiveView: (view: 'bubbles' | 'rankings' | 'lineage') => void;
+  activeView: 'bubbles' | 'solar' | 'rankings' | 'lineage';
+  setActiveView: (view: 'bubbles' | 'solar' | 'rankings' | 'lineage') => void;
   onRandomDistro: () => void;
   compareCount: number;
   onOpenCompare: () => void;
@@ -40,6 +40,15 @@ export const TopBar: React.FC<TopBarProps> = ({
           }`}
         >
           Bubble Universe
+        </button>
+
+        <button
+          onClick={() => setActiveView('solar')}
+          className={`hover:text-white transition-colors whitespace-nowrap shrink-0 ${
+            activeView === 'solar' ? 'text-white border-b-2 border-cyan-400 pb-0.5' : ''
+          }`}
+        >
+          Solar System
         </button>
 
         <button

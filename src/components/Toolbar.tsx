@@ -11,8 +11,8 @@ interface ToolbarProps {
   setSelectedCategory: (c: string) => void;
   clusterMode: ClusterMode;
   setClusterMode: (m: ClusterMode) => void;
-  activeView: 'bubbles' | 'rankings' | 'lineage';
-  setActiveView: (view: 'bubbles' | 'rankings' | 'lineage') => void;
+  activeView: 'bubbles' | 'solar' | 'rankings' | 'lineage';
+  setActiveView: (view: 'bubbles' | 'solar' | 'rankings' | 'lineage') => void;
   totalFilteredCount: number;
   onOpenMatchmaker: () => void;
   isEvolutionActive: boolean;

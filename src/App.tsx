@@ -11,10 +11,11 @@ import { CompareModal } from './components/CompareModal';
 import { LiveActivityTicker } from './components/LiveActivityTicker';
 import { DistroMatchmakerModal } from './components/DistroMatchmakerModal';
 import { EvolutionPlayer } from './components/EvolutionPlayer';
+import { SolarSystemCanvas } from './components/SolarSystemCanvas';
 import { toggleAudio, getAudioEnabled, playChimeSound } from './utils/audio';
 
 export default function App() {
-  const [activeView, setActiveView] = useState<'bubbles' | 'rankings' | 'lineage'>('bubbles');
+  const [activeView, setActiveView] = useState<'bubbles' | 'solar' | 'rankings' | 'lineage'>('bubbles');
   const [selectedDistro, setSelectedDistro] = useState<Distro | null>(null);
   const [hoveredDistroId, setHoveredDistroId] = useState<string | null>(null);
   const [pulseDistroId, setPulseDistroId] = useState<string | null>(null);
@@ -154,6 +155,16 @@ export default function App() {
             hoveredDistroId={hoveredDistroId}
             setHoveredDistroId={setHoveredDistroId}
             pulseDistroId={pulseDistroId}
+          />
+        )}
+
+        {activeView === 'solar' && (
+          <SolarSystemCanvas
+            distros={filteredDistros}
+            selectedDistro={selectedDistro}
+            onSelectDistro={handleSelectAndPulse}
+            hoveredDistroId={hoveredDistroId}
+            setHoveredDistroId={setHoveredDistroId}
           />
         )}
 
