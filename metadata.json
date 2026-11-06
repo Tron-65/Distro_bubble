@@ -1,0 +1,6 @@
+{
+  "name": "DistroSphere - Linux Distribution Bubbles & Lineage Tree",
+  "description": "Interactive exploration of Linux distributions with physics-based bubble clusters, DistroWatch popularity rankings, deep lineage family trees, and detailed specifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
